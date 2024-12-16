@@ -2,6 +2,8 @@
 
 ## Description
 
+Manage direct (det=+1) and indirect (det=-1) frames of reference.
+
 ## Author
 - Name: Artezaru
 - Email: artezaru.github@proton.me
