@@ -307,6 +307,177 @@
                   
   <section id="framebinder">
 <h1>FrameBinder<a class="headerlink" href="#framebinder" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyframe.FrameBinder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyframe.</span></span><span class="sig-name descname"><span class="pre">FrameBinder</span></span><a class="reference internal" href="../_modules/pyframe/frame_binder.html#FrameBinder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.FrameBinder" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.FrameBinder.add_frame">
+<span class="sig-name descname"><span class="pre">add_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="frame.html#pyframe.Frame" title="pyframe.frame.Frame"><span class="pre">Frame</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pyframe/frame_binder.html#FrameBinder.add_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.FrameBinder.add_frame" title="Link to this definition">#</a></dt>
+<dd><p>Add a frame to the FrameBinder.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>frame (Frame): The frame to be added.
+name (str): The name of the frame.
+link (str, optional): The name of the frame to link to. Defaults to None.
+copy (bool): Save a copy of the given frame. Defaults to False.</p>
+</dd>
+<dt>Raises:</dt><dd><p>TypeError: If the frame is not a Frame instance.
+ValueError: If the frame name already exists.
+ValueError: If the link name does not exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.FrameBinder.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pyframe/frame_binder.html#FrameBinder.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.FrameBinder.clear" title="Link to this definition">#</a></dt>
+<dd><p>Clear all frames and links in the FrameBinder.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyframe.FrameBinder.frames">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frames</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="frame.html#pyframe.Frame" title="pyframe.frame.Frame"><span class="pre">Frame</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pyframe.FrameBinder.frames" title="Link to this definition">#</a></dt>
+<dd><p>Get a dictionary of the frames.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.FrameBinder.from_frame_to_frame">
+<span class="sig-name descname"><span class="pre">from_frame_to_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pyframe/frame_binder.html#FrameBinder.from_frame_to_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.FrameBinder.from_frame_to_frame" title="Link to this definition">#</a></dt>
+<dd><p>Convert a point or vector from one frame to another frame.</p>
+<p>if point is not None and vector is not None, the function will raise a ValueError.
+if point is None and vector is None, the function will return None.</p>
+<p>if name is None, the function will return the point or vector in world coordinates.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>input_name (str, optional): The name of the input frame. Defaults to None.
+output_name (str, optional): The name of the output frame. Defaults to None.
+point (np.ndarray, optional): Point in input frame coordinates with shape (3, N). Defaults to None.
+vector (np.ndarray, optional): Vector in input frame coordinates with shape (3, N). Defaults to None.</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.ndarray: Point or vector in output frame coordinates with shape (3, N).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.FrameBinder.get_compose_frame">
+<span class="sig-name descname"><span class="pre">get_compose_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="frame.html#pyframe.Frame" title="pyframe.frame.Frame"><span class="pre">Frame</span></a></span></span><a class="reference internal" href="../_modules/pyframe/frame_binder.html#FrameBinder.get_compose_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.FrameBinder.get_compose_frame" title="Link to this definition">#</a></dt>
+<dd><p>The return frame is the transformation between the input frame and the output frame.</p>
+<p>if input_name is None, the function will return the worldcompose frame of the output frame.
+if output_name is None, the function will return the inverse worldcompose frame of the input frame.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>input_name (str, optional): The name of the input frame. Defaults to None.
+output_name (str, optional): The name of the output frame. Defaults to None.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Frame: The composed frame with the given name.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If the frame name does not exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.FrameBinder.get_frame">
+<span class="sig-name descname"><span class="pre">get_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="frame.html#pyframe.Frame" title="pyframe.frame.Frame"><span class="pre">Frame</span></a></span></span><a class="reference internal" href="../_modules/pyframe/frame_binder.html#FrameBinder.get_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.FrameBinder.get_frame" title="Link to this definition">#</a></dt>
+<dd><p>Get a frame from the FrameBinder.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name (str): The name of the frame to get.
+copy (bool): Get a copy of the given frame. Defaults to False.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Frame: The frame with the given name.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If the frame name does not exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.FrameBinder.get_worldcompose_frame">
+<span class="sig-name descname"><span class="pre">get_worldcompose_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="frame.html#pyframe.Frame" title="pyframe.frame.Frame"><span class="pre">Frame</span></a></span></span><a class="reference internal" href="../_modules/pyframe/frame_binder.html#FrameBinder.get_worldcompose_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.FrameBinder.get_worldcompose_frame" title="Link to this definition">#</a></dt>
+<dd><p>The return frame is the transformation between the world frame and the frame with the given name.</p>
+<p>If the name is None, the function will return the world frame.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name (str, optional): The name of the frame to get. Defaults to None.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Frame: The composed frame with the given name.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If the frame name does not exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyframe.FrameBinder.links">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">links</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pyframe.FrameBinder.links" title="Link to this definition">#</a></dt>
+<dd><p>Get a dictionary of the links between frames.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyframe.FrameBinder.names">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">names</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pyframe.FrameBinder.names" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of the names of the frames.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyframe.FrameBinder.num_frames">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_frames</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pyframe.FrameBinder.num_frames" title="Link to this definition">#</a></dt>
+<dd><p>Get the number of frames in the FrameBinder.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.FrameBinder.recursive_remove_frame">
+<span class="sig-name descname"><span class="pre">recursive_remove_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pyframe/frame_binder.html#FrameBinder.recursive_remove_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.FrameBinder.recursive_remove_frame" title="Link to this definition">#</a></dt>
+<dd><p>Recursively remove a frame and all its linked frames from the FrameBinder.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name (str): The name of the frame to be removed.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If the frame name does not exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.FrameBinder.remove_frame">
+<span class="sig-name descname"><span class="pre">remove_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pyframe/frame_binder.html#FrameBinder.remove_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.FrameBinder.remove_frame" title="Link to this definition">#</a></dt>
+<dd><p>Remove a frame from the FrameBinder.</p>
+<p>The frames link to the removed frame will be set to None.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name (str): The name of the frame to be removed.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If the frame name does not exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.FrameBinder.set_link">
+<span class="sig-name descname"><span class="pre">set_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pyframe/frame_binder.html#FrameBinder.set_link"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.FrameBinder.set_link" title="Link to this definition">#</a></dt>
+<dd><p>Set a link for a frame in the FrameBinder.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name (str): The name of the frame.
+link (str, optional): The name of the frame to link to. Defaults to None.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If the frame name does not exist.
+ValueError: If the link name does not exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.FrameBinder.set_name">
+<span class="sig-name descname"><span class="pre">set_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pyframe/frame_binder.html#FrameBinder.set_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.FrameBinder.set_name" title="Link to this definition">#</a></dt>
+<dd><p>Set a new name for a frame in the FrameBinder.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>old_name (str): The old name of the frame.
+new_name (str): The new name of the frame.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If the frame name does not exist.
+ValueError: If the new name already exists.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
@@ -338,6 +509,34 @@
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.FrameBinder"><code class="docutils literal notranslate"><span class="pre">FrameBinder</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.FrameBinder.add_frame"><code class="docutils literal notranslate"><span class="pre">FrameBinder.add_frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.FrameBinder.clear"><code class="docutils literal notranslate"><span class="pre">FrameBinder.clear()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.FrameBinder.frames"><code class="docutils literal notranslate"><span class="pre">FrameBinder.frames</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.FrameBinder.from_frame_to_frame"><code class="docutils literal notranslate"><span class="pre">FrameBinder.from_frame_to_frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.FrameBinder.get_compose_frame"><code class="docutils literal notranslate"><span class="pre">FrameBinder.get_compose_frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.FrameBinder.get_frame"><code class="docutils literal notranslate"><span class="pre">FrameBinder.get_frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.FrameBinder.get_worldcompose_frame"><code class="docutils literal notranslate"><span class="pre">FrameBinder.get_worldcompose_frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.FrameBinder.links"><code class="docutils literal notranslate"><span class="pre">FrameBinder.links</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.FrameBinder.names"><code class="docutils literal notranslate"><span class="pre">FrameBinder.names</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.FrameBinder.num_frames"><code class="docutils literal notranslate"><span class="pre">FrameBinder.num_frames</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.FrameBinder.recursive_remove_frame"><code class="docutils literal notranslate"><span class="pre">FrameBinder.recursive_remove_frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.FrameBinder.remove_frame"><code class="docutils literal notranslate"><span class="pre">FrameBinder.remove_frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.FrameBinder.set_link"><code class="docutils literal notranslate"><span class="pre">FrameBinder.set_link()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.FrameBinder.set_name"><code class="docutils literal notranslate"><span class="pre">FrameBinder.set_name()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">
