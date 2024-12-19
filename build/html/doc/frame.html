@@ -1,0 +1,764 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Frame &#8212; pyframe 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'doc/frame';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FrameBinder" href="frame_binder.html" />
+    <link rel="prev" title="pyframe documentation" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">pyframe 1.0.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Frame
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="frame_binder.html">
+    FrameBinder
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Frame
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="frame_binder.html">
+    FrameBinder
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Frame</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="frame">
+<h1>Frame<a class="headerlink" href="#frame" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyframe.Frame">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyframe.</span></span><span class="sig-name descname"><span class="pre">Frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quaternion</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation_matrix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">O3_project</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">euler_angles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direct</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyframe/frame.html#Frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.Frame" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a orthonormal reference frame in 3D space with a defined position and orientation.</p>
+<p>By convention, the frame is defined from the world frame to the local frame. 
+Thats means, the coordinates of the rotation matrix are the coordinates of the local axis in the world coordinates.</p>
+<p>The Frame class is used to represent a reference frame in 3D space.
+The frame is defined by a position and an orientation. 
+The orientation can be defined using a quaternion, a rotation matrix, or Euler angles. 
+The frame can be direct or indirect, depending on the determinant of the rotation matrix.
+The frame can be converted to and from world coordinates using the from_world_to_local and from_local_to_world methods. 
+The frame can also be exported and imported as a dictionary using the dump and load methods.</p>
+<p>When the rotation matrix is set, the determinant is checked to determine if the frame is direct or indirect.</p>
+<p>However when the quaternion or the euleur angles is set, the frame is always considered direct. 
+Then the user must set the frame as indirect using the set_indirect method.
+In this case the rotation matrix is inverted to have a right-handed frame.</p>
+<p>In fact when the frame is indirect, the user can : 
+- set directly the indirect rotation matrix.
+- set the quaternion or the euler angles of the associated direct frame and then set the frame as indirect.</p>
+<p>The associated direct frame correspond to the frame with the same position but the local Z-axis inverted.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="frame_binder.html#pyframe.FrameBinder" title="pyframe.FrameBinder"><code class="xref py py-class docutils literal notranslate"><span class="pre">FrameBinder</span></code></a>
+To manage multiple frames and their relationships.</p>
+</div>
+<section id="attributes">
+<h2>Attributes:<a class="headerlink" href="#attributes" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>position<span class="classifier">np.ndarray, optional</span></dt><dd><p>The position of the frame in 3D space with shape (3,1).</p>
+</dd>
+<dt>quaternion<span class="classifier">np.ndarray, optional</span></dt><dd><p>The quaternion of the frame.</p>
+</dd>
+<dt>rotation_matrix<span class="classifier">np.ndarray, optional</span></dt><dd><p>The rotation matrix of the frame.</p>
+</dd>
+<dt>euler_angles<span class="classifier">np.ndarray, optional </span></dt><dd><p>The Euler angles of the frame in radians.</p>
+</dd>
+<dt>direct<span class="classifier">bool, optional</span></dt><dd><p>If the frame is direct or indirect.</p>
+</dd>
+</dl>
+</section>
+<section id="properties">
+<h2>Properties:<a class="headerlink" href="#properties" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>position<span class="classifier">np.ndarray</span></dt><dd><p>Get or set the position of the frame in 3D space with shape (3,1).</p>
+</dd>
+<dt>quaternion<span class="classifier">np.ndarray</span></dt><dd><p>Get or set the quaternion of the frame.</p>
+</dd>
+<dt>rotation_matrix<span class="classifier">np.ndarray</span></dt><dd><p>Get the rotation matrix of the frame.</p>
+</dd>
+<dt>euler_angles<span class="classifier">np.ndarray</span></dt><dd><p>Get the Euler angles of the frame in radians.</p>
+</dd>
+<dt>homogeneous_matrix<span class="classifier">np.ndarray</span></dt><dd><p>Get the homogeneous transformation matrix of the frame.</p>
+</dd>
+<dt>direct<span class="classifier">bool</span></dt><dd><p>Get or set if the frame is direct or indirect.</p>
+</dd>
+<dt>x_axis<span class="classifier">np.ndarray</span></dt><dd><p>Get the X-axis of the frame with shape (3,1)</p>
+</dd>
+<dt>y_axis<span class="classifier">np.ndarray</span></dt><dd><p>Get the Y-axis of the frame with shape (3,1)</p>
+</dd>
+<dt>z_axis<span class="classifier">np.ndarray</span></dt><dd><p>Get the Z-axis of the frame with shape (3,1)</p>
+</dd>
+<dt>blender_quaternion<span class="classifier">np.ndarray</span></dt><dd><p>Get the quaternion in Blender coordinate system.</p>
+</dd>
+<dt>is_direct<span class="classifier">bool</span></dt><dd><p>Check if the frame is direct.</p>
+</dd>
+<dt>is_indirect<span class="classifier">bool</span></dt><dd><p>Check if the frame is indirect.</p>
+</dd>
+</dl>
+</section>
+<section id="examples">
+<h2>Examples:<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<p>.Example of using the <cite>Frame</cite> class to obtain its rotation matrix.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frame</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span>
+    <span class="n">position</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]),</span> 
+    <span class="n">quaternion</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]),</span> 
+    <span class="n">direct</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">rotation_matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="methods">
+<h2>Methods:<a class="headerlink" href="#methods" title="Link to this heading">#</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.Frame.apply_blender_frame">
+<span class="sig-name descname"><span class="pre">apply_blender_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pyframe/frame.html#Frame.apply_blender_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.Frame.apply_blender_frame" title="Link to this definition">#</a></dt>
+<dd><p>Apply the Blender coordinate system to the frame.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.Frame.apply_inverse_frame">
+<span class="sig-name descname"><span class="pre">apply_inverse_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pyframe/frame.html#Frame.apply_inverse_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.Frame.apply_inverse_frame" title="Link to this definition">#</a></dt>
+<dd><p>Apply a inversion to the frame.</p>
+<p>By convention, the frame is defined from the world to the local.
+This method compute the frame defined from the local to the world frame.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.Frame.apply_symmetric_frame">
+<span class="sig-name descname"><span class="pre">apply_symmetric_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pyframe/frame.html#Frame.apply_symmetric_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.Frame.apply_symmetric_frame" title="Link to this definition">#</a></dt>
+<dd><p>Apply a symmetry to the frame with respect to a plane defined by a point and a normal vector.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>point (np.ndarray): A point on the plane with shape (3,1).
+normal (np.ndarray): The normal vector of the plane with shape (3,1).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyframe.Frame.blender_quaternion">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">blender_quaternion</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#pyframe.Frame.blender_quaternion" title="Link to this definition">#</a></dt>
+<dd><p>Get the quaternion in Blender coordinate system.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyframe.Frame.direct">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">direct</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pyframe.Frame.direct" title="Link to this definition">#</a></dt>
+<dd><p>Get or set if the frame is direct or indirect.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.Frame.dump">
+<span class="sig-name descname"><span class="pre">dump</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/pyframe/frame.html#Frame.dump"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.Frame.dump" title="Link to this definition">#</a></dt>
+<dd><p>Export the Frame’s data as a dictionary.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>dict: A dictionary containing the Frame’s position, quaternion, direct.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyframe.Frame.euler_angles">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">euler_angles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#pyframe.Frame.euler_angles" title="Link to this definition">#</a></dt>
+<dd><p>Get the Euler angles of the frame in radians.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.Frame.from_local_to_world">
+<span class="sig-name descname"><span class="pre">from_local_to_world</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pyframe/frame.html#Frame.from_local_to_world"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.Frame.from_local_to_world" title="Link to this definition">#</a></dt>
+<dd><p>Convert a point or vector from local coordinates to world coordinates.</p>
+<p>if point is not None and vector is not None, the function will raise a ValueError.
+if point is None and vector is None, the function will return None.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>point (np.ndarray, optional): Point in local coordinates with shape (3, N). Defaults to None.
+vector (np.ndarray, optional): Vector in local coordinates with shape (3, N). Defaults to None.</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.ndarray: Point or vector in world coordinates with shape (3, N).</p>
+</dd>
+</dl>
+<p>Examples:
+&gt;&gt;&gt; frame = Frame(position=np.array([1.0, 2.0, 3.0]), quaternion=np.array([0.5, 0.5, 0.5, 0.5]), direct=True)
+&gt;&gt;&gt; frame.from_world_to_local(point=np.array([[1.0], [2.0], [3.0]]))</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.Frame.from_world_to_local">
+<span class="sig-name descname"><span class="pre">from_world_to_local</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pyframe/frame.html#Frame.from_world_to_local"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.Frame.from_world_to_local" title="Link to this definition">#</a></dt>
+<dd><p>Convert a point or vector from world coordinates to local coordinates.</p>
+<p>if point is not None and vector is not None, the function will raise a ValueError.
+if point is None and vector is None, the function will return None.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>point (np.ndarray, optional): Point in world coordinates with shape (3, N). Defaults to None.
+vector (np.ndarray, optional): Vector in world coordinates with shape (3, N). Defaults to None.</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.ndarray: Point or vector in local coordinates with shape (3, N).</p>
+</dd>
+</dl>
+<p>Examples:
+&gt;&gt;&gt; frame = Frame(position=np.array([1.0, 2.0, 3.0]), quaternion=np.array([0.5, 0.5, 0.5, 0.5]), direct=True)
+&gt;&gt;&gt; frame.from_world_to_local(point=np.array([[1.0], [2.0], [3.0]]))</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.Frame.get_blender_frame">
+<span class="sig-name descname"><span class="pre">get_blender_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyframe.Frame" title="pyframe.frame.Frame"><span class="pre">Frame</span></a></span></span><a class="reference internal" href="../_modules/pyframe/frame.html#Frame.get_blender_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.Frame.get_blender_frame" title="Link to this definition">#</a></dt>
+<dd><p>Get the frame in Blender coordinate system.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Frame: The frame in Blender coordinate system.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.Frame.get_inverse_frame">
+<span class="sig-name descname"><span class="pre">get_inverse_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyframe.Frame" title="pyframe.frame.Frame"><span class="pre">Frame</span></a></span></span><a class="reference internal" href="../_modules/pyframe/frame.html#Frame.get_inverse_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.Frame.get_inverse_frame" title="Link to this definition">#</a></dt>
+<dd><p>Get the inverse frame of the current frame.</p>
+<p>By convention, the frame is defined from the world to the local.
+This method compute the frame defined from the local to the world frame.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Frame: The symmetric frame of the current frame with respect to the plane.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.Frame.get_symmetric_frame">
+<span class="sig-name descname"><span class="pre">get_symmetric_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyframe.Frame" title="pyframe.frame.Frame"><span class="pre">Frame</span></a></span></span><a class="reference internal" href="../_modules/pyframe/frame.html#Frame.get_symmetric_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.Frame.get_symmetric_frame" title="Link to this definition">#</a></dt>
+<dd><p>Get the symmetric frame of the current frame with respect to a plane defined by a point and a normal vector.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>point (np.ndarray): A point on the plane with shape (3,1).
+normal (np.ndarray): The normal vector of the plane with shape (3,1).</p>
+</dd>
+<dt>Returns:</dt><dd><p>Frame: The symmetric frame of the current frame with respect to the plane.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyframe.Frame.homogeneous_matrix">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">homogeneous_matrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#pyframe.Frame.homogeneous_matrix" title="Link to this definition">#</a></dt>
+<dd><p>Get the homogeneous transformation matrix of the frame.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyframe.Frame.is_direct">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_direct</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pyframe.Frame.is_direct" title="Link to this definition">#</a></dt>
+<dd><p>Check if the frame is direct.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyframe.Frame.is_indirect">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_indirect</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pyframe.Frame.is_indirect" title="Link to this definition">#</a></dt>
+<dd><p>Check if the frame is indirect.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.Frame.load">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyframe.Frame" title="pyframe.frame.Frame"><span class="pre">Frame</span></a></span></span><a class="reference internal" href="../_modules/pyframe/frame.html#Frame.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.Frame.load" title="Link to this definition">#</a></dt>
+<dd><p>Create a Frame instance from a dictionary.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>data (dict): A dictionary containing the position, quaternion, direct.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Frame: A new Frame instance initialized with the provided data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyframe.Frame.position">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">position</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#pyframe.Frame.position" title="Link to this definition">#</a></dt>
+<dd><p>Get or set the position of the frame in 3D space with shape (3,1).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyframe.Frame.quaternion">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">quaternion</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#pyframe.Frame.quaternion" title="Link to this definition">#</a></dt>
+<dd><p>Get or set the quaternion of the frame.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyframe.Frame.rotation_matrix">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rotation_matrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#pyframe.Frame.rotation_matrix" title="Link to this definition">#</a></dt>
+<dd><p>Get the rotation matrix of the frame.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.Frame.set_O3_rotation_matrix">
+<span class="sig-name descname"><span class="pre">set_O3_rotation_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pyframe/frame.html#Frame.set_O3_rotation_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.Frame.set_O3_rotation_matrix" title="Link to this definition">#</a></dt>
+<dd><p>Set the rotation matrix of the frame in O(3).</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>matrix (np.ndarray): A 3x3 rotation matrix in O(3).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.Frame.set_direct">
+<span class="sig-name descname"><span class="pre">set_direct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">direct</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pyframe/frame.html#Frame.set_direct"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.Frame.set_direct" title="Link to this definition">#</a></dt>
+<dd><p>Set the frame as direct or indirect.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>direct (bool, optional): Set the frame as direct or indirect. Defaults to True.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyframe.Frame.set_indirect">
+<span class="sig-name descname"><span class="pre">set_indirect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indirect</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pyframe/frame.html#Frame.set_indirect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyframe.Frame.set_indirect" title="Link to this definition">#</a></dt>
+<dd><p>Set the frame as indirect or direct.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>indirect (bool, optional): Set the frame as indirect or direct. Defaults to True.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyframe.Frame.x_axis">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">x_axis</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#pyframe.Frame.x_axis" title="Link to this definition">#</a></dt>
+<dd><p>Get the X-axis of the frame with shape (3,1)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyframe.Frame.y_axis">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">y_axis</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#pyframe.Frame.y_axis" title="Link to this definition">#</a></dt>
+<dd><p>Get the Y-axis of the frame with shape (3,1)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyframe.Frame.z_axis">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">z_axis</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#pyframe.Frame.z_axis" title="Link to this definition">#</a></dt>
+<dd><p>Get the Z-axis of the frame with shape (3,1)</p>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pyframe documentation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="frame_binder.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">FrameBinder</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame"><code class="docutils literal notranslate"><span class="pre">Frame</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.apply_blender_frame"><code class="docutils literal notranslate"><span class="pre">Frame.apply_blender_frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.apply_inverse_frame"><code class="docutils literal notranslate"><span class="pre">Frame.apply_inverse_frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.apply_symmetric_frame"><code class="docutils literal notranslate"><span class="pre">Frame.apply_symmetric_frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.blender_quaternion"><code class="docutils literal notranslate"><span class="pre">Frame.blender_quaternion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.direct"><code class="docutils literal notranslate"><span class="pre">Frame.direct</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.dump"><code class="docutils literal notranslate"><span class="pre">Frame.dump()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.euler_angles"><code class="docutils literal notranslate"><span class="pre">Frame.euler_angles</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.from_local_to_world"><code class="docutils literal notranslate"><span class="pre">Frame.from_local_to_world()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.from_world_to_local"><code class="docutils literal notranslate"><span class="pre">Frame.from_world_to_local()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.get_blender_frame"><code class="docutils literal notranslate"><span class="pre">Frame.get_blender_frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.get_inverse_frame"><code class="docutils literal notranslate"><span class="pre">Frame.get_inverse_frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.get_symmetric_frame"><code class="docutils literal notranslate"><span class="pre">Frame.get_symmetric_frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.homogeneous_matrix"><code class="docutils literal notranslate"><span class="pre">Frame.homogeneous_matrix</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.is_direct"><code class="docutils literal notranslate"><span class="pre">Frame.is_direct</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.is_indirect"><code class="docutils literal notranslate"><span class="pre">Frame.is_indirect</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.load"><code class="docutils literal notranslate"><span class="pre">Frame.load()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.position"><code class="docutils literal notranslate"><span class="pre">Frame.position</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.quaternion"><code class="docutils literal notranslate"><span class="pre">Frame.quaternion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.rotation_matrix"><code class="docutils literal notranslate"><span class="pre">Frame.rotation_matrix</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.set_O3_rotation_matrix"><code class="docutils literal notranslate"><span class="pre">Frame.set_O3_rotation_matrix()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.set_direct"><code class="docutils literal notranslate"><span class="pre">Frame.set_direct()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.set_indirect"><code class="docutils literal notranslate"><span class="pre">Frame.set_indirect()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.x_axis"><code class="docutils literal notranslate"><span class="pre">Frame.x_axis</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.y_axis"><code class="docutils literal notranslate"><span class="pre">Frame.y_axis</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyframe.Frame.z_axis"><code class="docutils literal notranslate"><span class="pre">Frame.z_axis</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/doc/frame.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Artezaru.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
