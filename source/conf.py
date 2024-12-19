@@ -42,10 +42,10 @@ html_static_path = ['_static']
 
 
 # Import the Read the Docs theme
-import sphinx_rtd_theme
+import pydata_sphinx_theme
 
 # The theme to use for HTML and HTML Help pages. (default: 'alabaster')
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'pydata_sphinx_theme'
 
 # Add any paths that contain custom themes here, relative to this directory.
 html_theme_path = []

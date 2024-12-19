@@ -4,7 +4,7 @@ from typing import Optional
 import numpy as np
 from scipy.spatial.transform import Rotation
 
-class Frame:
+class Frame(object):
     """
     Represents a orthonormal reference frame in 3D space with a defined position and orientation.
 
@@ -30,6 +30,9 @@ class Frame:
 
     The associated direct frame correspond to the frame with the same position but the local Z-axis inverted.
 
+    .. seealso:: :class:`FrameBinder`
+        To manage multiple frames and their relationships.
+
     Attributes:
     -----------
     position : np.ndarray, optional
@@ -46,7 +49,7 @@ class Frame:
     Properties:
     -----------
     position : np.ndarray
-        Get or set the position of the frame in 3D space with shape (3,1).
+        Get or set the position of the frame in 3D space with shape (3,1). 
     quaternion : np.ndarray
         Get or set the quaternion of the frame.
     rotation_matrix : np.ndarray
@@ -72,8 +75,20 @@ class Frame:
 
     Examples:
     ---------
-    >>> frame = Frame(position=np.array([1.0, 2.0, 3.0]), quaternion=np.array([0.5, 0.5, 0.5, 0.5]), direct=True)
-    >>> frame.rotation_matrix
+
+    .Example of using the `Frame` class to obtain its rotation matrix.
+
+    .. code-block:: python
+
+        frame = Frame(
+            position=np.array([1.0, 2.0, 3.0]), 
+            quaternion=np.array([0.5, 0.5, 0.5, 0.5]), 
+            direct=True
+        )
+        print(frame.rotation_matrix)
+
+    Methods:
+    --------
     """
 
     _tolerance = 1e-6
@@ -89,17 +104,6 @@ class Frame:
         euler_angles: Optional[np.ndarray] = None,
         direct: bool = True,
         ) -> None:
-        """
-        Initialize a Frame object.
-
-        Args:
-            position (np.ndarray, optional): The position of the frame in 3D space with shape (3,1). Defaults to None.
-            quaternion (np.ndarray, optional): The quaternion of the frame. Defaults to None.
-            rotation_matrix (np.ndarray, optional): The rotation matrix of the frame. Defaults to None.
-
-            euler_angles (np.ndarray, optional): The Euler angles of the frame in radians. Defaults to None.
-            direct (bool, optional): If the frame is direct or indirect. Defaults to True.
-        """
         # Set default values
         if sum([quaternion is not None, rotation_matrix is not None, euler_angles is not None]) > 1:
             raise ValueError("Only one of 'quaternion', 'rotation_matrix', or 'euler_angles' can be provided.")
