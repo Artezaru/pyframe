@@ -49,6 +49,7 @@ html_theme_path = []
 # Add the extensions
 extensions = [
 'sphinx.ext.githubpages',
+'pydata_sphinx_theme',
 'sphinx.ext.autodoc',
 'sphinx.ext.viewcode',  # Optional: to add links to the source code in the documentation
 # Add other extensions you want
