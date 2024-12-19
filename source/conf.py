@@ -37,15 +37,11 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
-html_static_path = ['_static']
-
-
 # Import the Read the Docs theme
 import pydata_sphinx_theme
 
-# The theme to use for HTML and HTML Help pages. (default: 'alabaster')
 html_theme = 'pydata_sphinx_theme'
+html_static_path = ['_static']
 
 # Add any paths that contain custom themes here, relative to this directory.
 html_theme_path = []
