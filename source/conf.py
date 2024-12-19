@@ -26,10 +26,6 @@ release = read_version()
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.viewcode',
-]
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -49,6 +45,7 @@ html_theme_path = []
 # Add the extensions
 extensions = [
 'sphinx.ext.githubpages',
+'pydata_sphinx_theme',
 'sphinx.ext.autodoc',
 'sphinx.ext.viewcode',  # Optional: to add links to the source code in the documentation
 # Add other extensions you want
